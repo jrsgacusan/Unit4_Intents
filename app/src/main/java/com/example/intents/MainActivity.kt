@@ -25,8 +25,6 @@ class MainActivity : AppCompatActivity() {
             if (username.equals("admin") && password.equals("password")) { //Checks if the credentials are correct, if correct, go to other activity. (No DB yet)
                 goToOtherActivity()
                 Toast.makeText(this, "You are now logged in.", Toast.LENGTH_SHORT).show()
-            } else if (username == null && password == null ) {
-                Toast.makeText(this, "Please enter username and password.", Toast.LENGTH_SHORT).show()
             } else if (username != "admin" || password != "password") {
                 Toast.makeText(this, "Incorrect username or password.", Toast.LENGTH_SHORT).show()
             }
