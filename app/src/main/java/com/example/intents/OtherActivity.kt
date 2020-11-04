@@ -1,11 +1,10 @@
 package com.example.intents
 
-import android.content.ActivityNotFoundException
+
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.provider.MediaStore
 import android.widget.Button
 
@@ -19,7 +18,7 @@ class OtherActivity : AppCompatActivity() {
             openCamera()
         }
         findViewById<Button>(R.id.btnContacts).setOnClickListener {
-            showContacs()
+//            showContacs()
         }
         findViewById<Button>(R.id.btnMessages).setOnClickListener {
 
@@ -36,9 +35,9 @@ class OtherActivity : AppCompatActivity() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
     }
-    private fun showContacs() {
-        val uri = Uri.parse("content://contacts/people/*")
-        val showContactsIntent = Intent(Intent.ACTION_DIAL, uri)
-        startActivity(showContactsIntent)
-    }
+//    private fun showContacs() {
+//        val uri = Uri.parse("content://contacts/people/*")
+//        val showContactsIntent = Intent(Intent.ACTION_DIAL, uri)
+//        startActivity(showContactsIntent)
+//    }
 }
