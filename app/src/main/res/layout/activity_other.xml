@@ -7,7 +7,7 @@
     tools:context=".OtherActivity">
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/btnCamera"
         android:layout_width="245dp"
         android:layout_height="66dp"
         android:layout_marginTop="188dp"
@@ -23,7 +23,7 @@
         android:text="CONTACTS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
 
     <Button
         android:id="@+id/button16"

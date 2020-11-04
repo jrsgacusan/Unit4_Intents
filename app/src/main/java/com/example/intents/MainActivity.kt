@@ -16,9 +16,10 @@ class MainActivity : AppCompatActivity() {
 
 
         findViewById<Button>(R.id.btnLogIn).setOnClickListener {
+            //Username value
             val usernameText = findViewById<View>(R.id.txtUsername) as EditText
             val username = usernameText.text.toString();
-
+            //Password value
             val passwordText = findViewById<View>(R.id.txtPassword) as EditText
             val password = passwordText.text.toString();
 
