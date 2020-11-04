@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "You are now logged in.", Toast.LENGTH_SHORT).show()
             } else if (username != "admin" || password != "password") {
                 Toast.makeText(this, "Incorrect username or password.", Toast.LENGTH_SHORT).show()
-            } else if (usernameText == null || passwordText == null) {
-                Toast.makeText(this, "Values must not be null.", Toast.LENGTH_SHORT).show()
             }
         }
     }
