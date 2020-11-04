@@ -1,55 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/btnMessages"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_other_scene"
     tools:context=".OtherActivity">
 
-    <Button
-        android:id="@+id/btnCamera"
-        android:layout_width="245dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="188dp"
-        android:text="CAMERA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="-16dp">
 
-    <Button
-        android:id="@+id/btnContacts"
-        android:layout_width="245dp"
-        android:layout_height="66dp"
-        android:text="CONTACTS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="160dp"
+            android:layout_height="97dp"
+            android:layout_marginTop="100dp"
+            android:text="CAMERA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="245dp"
-        android:layout_height="66dp"
-        android:text="MESSAGES"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnContacts" />
+        <Button
+            android:id="@+id/btnMessage"
+            android:layout_width="160dp"
+            android:layout_height="97dp"
+            android:text="MESSAGE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
 
-    <Button
-        android:id="@+id/btnGallery"
-        android:layout_width="245dp"
-        android:layout_height="66dp"
-        android:text="GALLERY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button16" />
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="160dp"
+            android:layout_height="97dp"
+            android:layout_marginTop="0dp"
+            android:text="gallery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnContacts" />
 
-    <Button
-        android:id="@+id/btnClock"
-        android:layout_width="245dp"
-        android:layout_height="66dp"
-        android:text="CLOCK"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGallery" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnTimer"
+            android:layout_width="160dp"
+            android:layout_height="97dp"
+            android:layout_marginTop="0dp"
+            android:text="TIMER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGallery" />
+
+        <Button
+            android:id="@+id/btnContacts"
+            android:layout_width="160dp"
+            android:layout_height="97dp"
+            android:text="CONTACTS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMessage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

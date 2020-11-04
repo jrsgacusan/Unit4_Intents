@@ -23,10 +23,9 @@ class MainActivity : AppCompatActivity() {
             val passwordText = findViewById<View>(R.id.txtPassword) as EditText
             val password = passwordText.text.toString();
 
-            if (usernameText.equals("admin") && passwordText.equals("password")) { //Checks if the credentials are correct, if correct, go to other activity. (No DB yet)
+            if (username.equals("") && password.equals("")) { //Checks if the credentials are correct, if correct, go to other activity. (No DB yet)
                 goToOtherActivity()
-                Toast.makeText(this, "You are now logged in.", Toast.LENGTH_SHORT).show()
-            } else if (username != "admin" || password != "password") {
+            } else if (username != "" || password != "") {
                 Toast.makeText(this, "Incorrect username or password.", Toast.LENGTH_SHORT).show()
             }
         }
@@ -36,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private fun goToOtherActivity() {
         val intent = Intent( this, OtherActivity::class.java )
         startActivity(intent)
+        Toast.makeText(this, "You are now logged in.", Toast.LENGTH_SHORT).show()
     }
 
 
