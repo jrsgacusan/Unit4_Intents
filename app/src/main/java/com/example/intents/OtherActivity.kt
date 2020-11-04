@@ -38,7 +38,7 @@ class OtherActivity : AppCompatActivity() {
     }
     private fun showContacs() {
         val uri = Uri.parse("content://contacts/people/*")
-        val intent = Intent(Intent.ACTION_DIAL, uri)
-        startActivity(intent)
+        val showContactsIntent = Intent(Intent.ACTION_DIAL, uri)
+        startActivity(showContactsIntent)
     }
 }

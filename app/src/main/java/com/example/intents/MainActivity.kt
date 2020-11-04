@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
 
     //Function to go to the next activity
     private fun goToOtherActivity() {
-        val intent = Intent( this, OtherActivity::class.java )
-        startActivity(intent)
+        val goToNextActivityIntent = Intent( this, OtherActivity::class.java )
+        startActivity(goToNextActivityIntent)
     }
 
 
