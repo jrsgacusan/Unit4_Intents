@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.provider.ContactsContract
-import android.provider.MediaStore
 import android.provider.Settings
 import android.widget.Button
 import android.widget.Toast
@@ -15,30 +14,31 @@ class OtherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_other)
-        findViewById<Button>(R.id.btnCamera).setOnClickListener { openCamera() }
-        findViewById<Button>(R.id.btnContacts).setOnClickListener { showContacs() }
-        findViewById<Button>(R.id.btnMessage).setOnClickListener { createMessage() }
+        findViewById<Button>(R.id.btnFilestorage).setOnClickListener { selectImage() }
+        findViewById<Button>(R.id.btnMessage).setOnClickListener { openMessages() }
+        findViewById<Button>(R.id.btnWifi).setOnClickListener { openWifi() }
         findViewById<Button>(R.id.btnTimer).setOnClickListener { showTimer() } //Fail intentionally
-        findViewById<Button>(R.id.btnGallery).setOnClickListener { openSettings() } //Fail intentionally
+        findViewById<Button>(R.id.btnSettings).setOnClickListener { openSettings() } //Fail intentionally
     }
-    //Handles the function for the Camera button
-    val REQUEST_IMAGE_CAPTURE = 1
-    private fun openCamera() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-    }
-    //Handles the show contacts function
-    val REQUEST_SELECT_CONTACT = 1
-    fun showContacs() {
-        val intent = Intent(Intent.ACTION_PICK).apply {
-            type = ContactsContract.Contacts.CONTENT_TYPE
+    //Handles the function for btnFilestorage
+    val REQUEST_IMAGE_GET = 1
+    fun selectImage() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
+            type = "image/*"
         }
         if (intent.resolveActivity(packageManager) != null) {
-            startActivityForResult(intent, REQUEST_SELECT_CONTACT)
+            startActivityForResult(intent, REQUEST_IMAGE_GET)
+        }
+    }
+    //Handles the show contacts function
+    private fun openWifi() {
+        val intent = Intent(Settings.ACTION_WIFI_SETTINGS)
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
         }
     }
     //Handles the function for create message button
-    fun createMessage() {
+    fun openMessages() {
         val intent = Intent(Intent.ACTION_MAIN)
         intent.addCategory(Intent.CATEGORY_APP_MESSAGING)
         startActivity(intent)

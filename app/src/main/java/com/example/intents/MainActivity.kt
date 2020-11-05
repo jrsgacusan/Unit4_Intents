@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             val password = passwordText.text.toString();
 
             if (username.equals("admin") && password.equals("password")) { //Checks if the credentials are correct, if correct, go to other activity. (No DB yet)
+
                 goToOtherActivity()
             } else if (username != "admin" || password != "password") {
                 Toast.makeText(this, "Incorrect username or password.", Toast.LENGTH_SHORT).show()
